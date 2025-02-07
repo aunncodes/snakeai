@@ -313,7 +313,7 @@ if __name__ == "__main__":
             except:
                 print("No backup model found, training new population")
     train_model = input("Train model? (y/n): ").lower() == 'y'
-    if train_model and not best_net:
+    if train_model:
         trained_population = train_population(population, game, generations=GENERATIONS, headless=True)
         best_net = max(trained_population, key=lambda net: game.score)
 
